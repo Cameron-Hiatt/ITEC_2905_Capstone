@@ -22,7 +22,7 @@ public class Main
     public static Birthdays birthdays = new Birthdays();
 
     //Basically the object that bridges your code with the discord bot, also logs the bot in.
-    public static DiscordApi api = new DiscordApiBuilder().setToken("NzY1OTc1MTU3MzY5NDcxMDM2.X4cn9A.LWcZVkaND_X_HU9bN78w4AG1sK8").login().join();
+    public static DiscordApi api = new DiscordApiBuilder().setToken("Token").login().join();
 
     //text channels the bot uses to send specific messages to
     public static Optional<TextChannel> communityChat = api.getTextChannelById("524120107828510723");
