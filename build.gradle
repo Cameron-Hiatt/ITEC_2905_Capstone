@@ -1,5 +1,4 @@
 plugins {
-    id 'java'
     id 'application'
 }
 
@@ -14,4 +13,27 @@ repositories {
 
 dependencies {
     implementation 'org.javacord:javacord:3.1.1'
+}
+
+application {
+    mainClass = 'inc.pepegabakery.asassypastry.Main'
+}
+
+task createDocs {
+    def docs = file("$buildDir/docs")
+    outputs.dir docs
+    doLast {
+        docs.mkdirs()
+        new File(docs, 'readme.txt').write('Read me!')
+    }
+}
+
+distributions {
+    main {
+        contents {
+            from(createDocs) {
+                into 'docs'
+            }
+        }
+    }
 }
